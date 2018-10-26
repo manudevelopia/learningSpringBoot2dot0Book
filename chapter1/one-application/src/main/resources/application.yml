@@ -1,0 +1,13 @@
+
+spring:
+  application:
+    name: Chapter One
+
+# Server
+server:
+  port: 9000
+
+# Logs
+logging:
+  level:
+    info.developia.learspringbook.one: DEBUG
