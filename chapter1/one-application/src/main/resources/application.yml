@@ -11,3 +11,16 @@ server:
 logging:
   level:
     info.developia.learspringbook.one: DEBUG
+
+# Actuator
+enpoints:
+  autoconfig.enable: true
+  beans.enable: true
+  config.enable-props: true
+  dump.enable: true
+  env.enable: true
+  health.enable: true
+  info.enable: true
+  metrics.enable: true
+  mappings.enable: true
+  trace.enable: true
