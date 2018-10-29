@@ -10,17 +10,17 @@ server:
 # Logs
 logging:
   level:
-    info.developia.learspringbook.one: DEBUG
+    info.developia.learnspringbook.one: DEBUG
 
 # Actuator
-enpoints:
-  autoconfig.enable: true
-  beans.enable: true
-  config.enable-props: true
-  dump.enable: true
-  env.enable: true
-  health.enable: true
-  info.enable: true
-  metrics.enable: true
-  mappings.enable: true
-  trace.enable: true
+management:
+  endpoint:
+    configprops.enabled: true
+    beans.enabled: true
+    heapdump.enabled: true
+    env.enabled: true
+    health.enabled: true
+    info.enabled: true
+    metrics.enabled: true
+    mappings.enabled: true
+    httptrace.enabled: true
