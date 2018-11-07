@@ -8,4 +8,10 @@ import lombok.Data;
 public class Image {
     private String id;
     private String filename;
+
+    public Image(String id, String filename){
+        this.id = id;
+        this.filename = filename;
+    }
+
 }
