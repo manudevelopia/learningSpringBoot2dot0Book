@@ -1,19 +1,14 @@
 package info.developia.learnspringbook.two.service;
 
 import info.developia.learnspringbook.two.domain.Image;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Service;
-import org.springframework.util.FileCopyUtils;
-import org.springframework.util.FileSystemUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,26 +21,6 @@ public class ImageService {
 
     public ImageService(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
-    }
-
-    @Bean
-    CommandLineRunner setUp() throws IOException {
-        return (args) -> {
-            FileSystemUtils.deleteRecursively(new File(UPLOAD_ROOT));
-
-            Files.createDirectory(Paths.get(UPLOAD_ROOT));
-
-            FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT +
-                    "/learning-spring-boot-cover.jpg"));
-
-            FileCopyUtils.copy("Test file2",
-                    new FileWriter(UPLOAD_ROOT +
-                            "/learning-spring-boot-2nd-edition-cover.jpg"));
-
-            FileCopyUtils.copy("Test file3",
-                    new FileWriter(UPLOAD_ROOT + "/bazinga.png"));
-        };
-
     }
 
     public Flux<Image> getAllImages() {
